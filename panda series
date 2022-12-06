@@ -1,0 +1,111 @@
+import pandas as pd
+
+#pandas stand for series
+s1=pd.Series([100,20,300,400])#converting tuple into series
+print(type(s1))
+
+s2=pd.Series([100,20,300,400],index=[2020,2021,2022,2023])
+print(type(s2))
+print(s2)
+
+s2.head(3)
+
+s2.tail(2)
+
+s3=pd.Series([100,20,300,400],index=['a','c','x','z'])
+print(type(s3))
+print(s3)
+
+
+
+# series [label] label exist it will return its value and if not exist it will raise error
+#series [index] if label are alphabetic or alpha numeric
+
+print(s3)
+
+
+
+# end label not be  excluded if we are doing slicing on basic of labels
+s3['a':'x']# seriesname [startlabel:endlabel:step]
+
+
+
+s3[0:2]
+
+
+
+s2
+
+
+
+s2.loc[2021:2023]
+
+
+
+s2[0:2]#end is excluded slicing of index
+
+#loc & iloc
+#loc[startlabel:endlabel:step]is used for slicing on basis of label.end will b included
+#iloc[startindex:endindex:step]is used for slicing on basis of index:end will b excluded
+
+
+s2.loc[2021:2023]
+
+s2.loc[::-1]
+
+s2.loc[::2]
+
+#loc is for slicing  strings 
+s3.loc['a'::3]
+
+#iloc will slice on basis of index by numeric numbers
+
+
+s3.iloc[0:2]
+
+s2.iloc[1::-1]
+
+s2.iloc[2:4]
+
+s2.iloc[3:1:-2]
+
+s1.index
+
+s2.index
+
+s1.mean()
+
+s1.sum()
+
+s1.max()
+
+s1.min()
+
+s1.dtype
+
+s2.dtype
+
+s2.items
+
+#analysing the data
+s2.describe()
+
+#tail is for stsrting from bottom
+s2.tail(-1-2)
+
+s2.tail(3)
+
+s5=s3
+
+s5
+
+#copy data var, To drop the index value
+s5.drop(labels=['c'])
+
+tpo=pd.Series([10,20,30,40,5,60,],index=[201,202,203,204,205,206])
+tpo
+
+print(type(tpo))
+
+tpo.head(3)
+
