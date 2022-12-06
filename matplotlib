@@ -1,0 +1,44 @@
+
+import matplotlib. pyplot as plt
+import numpy as np
+
+n=[1,2,3,4]
+k=[5,6,7,8]
+
+c=['r','g','y','b']
+
+plt.bar(k,n,color=c)
+plt.show()
+
+# line plot
+x=['python','java','c++','c']
+y=[20,19,15,13]
+z=[20,30,40,50 ]
+plt.xlabel('language',fontsize=14)
+plt.ylabel('points',fontsize=14)
+plt.title('demand',fontsize=14)
+c=['y','b','m','g']
+plt.bar(x,z,width=0.6,color='g',label='popularity1')
+plt.bar(x,y,width=0.6,color='r',label='popularity')# align not necessary
+plt.legend()
+plt.show()
+
+# line plot
+x=['python','java','c++','c']
+y=[20,19,15,13]
+z=[20,30,40,50 ]
+width=0.2
+p=np.arange(len(x))
+p1=[j+width for j in p]
+
+plt.xlabel('language',fontsize=14)
+plt.ylabel('points',fontsize=14)
+plt.title('demand',fontsize=14)
+
+plt.bar(p,z,width,color='g',label='popularity1')
+plt.bar(p1,y,width,color='r',label='popularity')# align not necessary
+
+plt.xticks(p+width/2,x)
+plt.legend()
+plt.show()
+
